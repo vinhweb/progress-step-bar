@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.progress_bar{
+
+}
+
+.progress_bar-steps{
+  display: flex;
+  gap: 60px;
+  position: relative;
+}
+
+.progress_bar-steps::before{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: rgb(223, 221, 221);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.progress_bar-progress{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 0%;
+  background: rgb(81, 81, 225);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.progress_bar-step{
+  background: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  width: 50px;
+  color: rgb(78, 8, 122);
+  border: 5px solid rgb(223, 221, 221);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.progress_bar-step.active{
+  border: 5px solid rgb(81, 81, 225);
+}
+
+
+.progress_bar-nav{
+  margin-top: 40px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 15px;
+}
+
+.progress_bar-nav button{
+  border-radius: 8px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background: rgb(213 212 255);
+  color: white;
+  font-size: 14px;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: not-allowed;
+}
+.progress_bar-nav button.active{
+  background: rgb(81, 81, 225);
+  color: white;
+  cursor: pointer;
+}
+.progress_bar-nav button:hover{
+  opacity: 0.8;
+}
